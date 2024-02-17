@@ -31,3 +31,10 @@ docker run -d \
 ```
 docker logs WxPush -f
 ```
+建议增加一个cron定时任务，不要24小时一直挂着
+```
+crontab -e
+
+46 23 * * * docker stop WxPush  # 每天23:46 停止容器
+33  8 * * * docker start WxPush # 每天 8:33 启动容器
+```
