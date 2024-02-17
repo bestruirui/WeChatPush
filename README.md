@@ -1,9 +1,9 @@
-# WxMIPush
+# WeChatPush
 
 > 感谢[eatmoreapple/openwechat](https://github.com/eatmoreapple/openwechat)提供的API  
 
 微信消息转发，仅转发，无回复功能
-- [x] 借助QQ邮箱使用MIPush推送，再也不用把微信挂后台了
+- [x] 借助QQ邮箱使用MIPush推送(理论支持各家系统)，再也不用把微信挂后台了
 - [x] 无需重复扫码登录
 - [ ] 支持多个微信号同时转发
 
