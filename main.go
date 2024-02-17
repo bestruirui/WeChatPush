@@ -11,7 +11,7 @@ func main() {
 	bot := openwechat.DefaultBot(openwechat.Desktop) // 桌面模式
 
 	// 创建热存储容器对象
-	reloadStorage := openwechat.NewFileHotReloadStorage("storage.json")
+	reloadStorage := openwechat.NewFileHotReloadStorage("/app/data/storage.json")
 
 	defer reloadStorage.Close()
 
