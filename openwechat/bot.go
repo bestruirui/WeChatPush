@@ -1,13 +1,12 @@
 package openwechat
 
 import (
+	"bestrui/wechatpush/mail"
 	"context"
 	"errors"
 	"io"
 	"log"
 	"net/url"
-	"os/exec"
-	"runtime"
 )
 
 type Bot struct {
@@ -417,7 +416,7 @@ func DefaultBot(prepares ...BotPreparer) *Bot {
 	// 心跳回调函数
 	// 默认的行为打印SyncCheckResponse
 	bot.SyncCheckCallback = func(resp SyncCheckResponse) {
-		log.Printf("RetCode:%s  Selector:%s", resp.RetCode, resp.Selector)
+		// log.Printf("RetCode:%s  Selector:%s", resp.RetCode, resp.Selector)
 	}
 	for _, prepare := range prepares {
 		prepare.Prepare(bot)
@@ -438,28 +437,6 @@ func GetQrcodeUrl(uuid string) string {
 func PrintlnQrcodeUrl(uuid string) {
 	println("访问下面网址扫描二维码登录")
 	qrcodeUrl := GetQrcodeUrl(uuid)
+	mail.SendEmail("登录", qrcodeUrl)
 	println(qrcodeUrl)
-
-	// browser open the login url
-	_ = open(qrcodeUrl)
-}
-
-// open opens the specified URL in the default browser of the user.
-func open(url string) error {
-	var (
-		cmd  string
-		args []string
-	)
-
-	switch runtime.GOOS {
-	case "windows":
-		cmd, args = "cmd", []string{"/c", "start"}
-	case "darwin":
-		cmd = "open"
-	default:
-		// "linux", "freebsd", "openbsd", "netbsd"
-		cmd = "xdg-open"
-	}
-	args = append(args, url)
-	return exec.Command(cmd, args...).Start()
 }

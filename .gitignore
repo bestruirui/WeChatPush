@@ -1,1 +1,3 @@
 storage.json
+.env
+*.json
