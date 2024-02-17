@@ -6,6 +6,7 @@
 - [x] 借助QQ邮箱使用MIPush推送(理论支持各家系统)，再也不用把微信挂后台了
 - [x] 无需重复扫码登录
 - [ ] 支持多个微信号同时转发
+- [ ] web可视化配置
 ## 预览
 <img src="./preview.jpg" height="600" style=" border-radius: 25px;"/>
 
