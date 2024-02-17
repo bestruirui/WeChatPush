@@ -24,8 +24,8 @@ docker run -d \
 	-e USERNAME=#smtp的邮箱地址 和FROM_NAME的值是一样的 \
 	-e PASSWORD=#smtp的邮箱密码 \
 	-v ./WxPush:/app/data \
-	bestrui/wxpush:1.0
-# 如果镜像拉取速度慢，可以使用代理`docker.nju.edu.cn/bestrui/wxpush:1.0`
+	bestrui/wxpush:latest
+# 如果镜像拉取速度慢，可以使用代理`docker.nju.edu.cn/bestrui/wxpush:latest`
 ```
 容器运行后会在控制台打印登录二维码的链接
 ```
