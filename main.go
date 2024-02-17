@@ -43,17 +43,17 @@ func main() {
 				fmt.Println(friendSenderName, ":", msg.Content)
 				mail.SendEmail(friendSenderName, msg.Content)
 			} else if msg.IsPicture() {
-				fmt.Println(friendSenderName, ":", "发送了一张图片")
-				mail.SendEmail(friendSenderName, "发送了一张图片")
+				fmt.Println(friendSenderName, ":", "[图片]")
+				mail.SendEmail(friendSenderName, "[图片]")
 			} else if msg.IsVoice() {
-				fmt.Println(friendSenderName, ":", "发送了一段语音")
-				mail.SendEmail(friendSenderName, "发送了一张图片")
+				fmt.Println(friendSenderName, ":", "[语音]")
+				mail.SendEmail(friendSenderName, "[语音]")
 			} else if msg.IsVideo() {
-				fmt.Println(friendSenderName, ":", "发送了一段视频")
-				mail.SendEmail(friendSenderName, "发送了一段视频")
+				fmt.Println(friendSenderName, ":", "[视频]")
+				mail.SendEmail(friendSenderName, "[视频]")
 			} else if msg.IsEmoticon() {
-				fmt.Println(friendSenderName, ":", "发送了一个表情")
-				mail.SendEmail(friendSenderName, "发送了一个表情")
+				fmt.Println(friendSenderName, ":", "[动画表情]")
+				mail.SendEmail(friendSenderName, "[动画表情]")
 			}
 		} else { //群聊发送的消息
 			groupSender, err := msg.SenderInGroup()
