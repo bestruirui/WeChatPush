@@ -54,6 +54,9 @@ func main() {
 			} else if msg.IsEmoticon() {
 				fmt.Println(friendSenderName, ":", "[动画表情]")
 				mail.SendEmail(friendSenderName, "[动画表情]")
+			} else {
+				fmt.Println(friendSenderName, ":", "[未知类型消息]")
+				mail.SendEmail(friendSenderName, "[未知类型消息]")
 			}
 		} else { //群聊发送的消息
 			groupSender, err := msg.SenderInGroup()
